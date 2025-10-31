@@ -1,0 +1,29 @@
+CREATE TABLE pending_registrations (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  fullname VARCHAR(200) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(50),
+  address TEXT,
+  course VARCHAR(100),
+  submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  note TEXT
+);
+
+CREATE TABLE students (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(100) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  fullname VARCHAR(200) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(50),
+  address TEXT,
+  course VARCHAR(100),
+  joined_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE admins (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(100) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  fullname VARCHAR(150)
+);
